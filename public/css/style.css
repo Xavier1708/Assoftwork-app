@@ -1,0 +1,50 @@
+
+
+*{
+    border: 0px solid orangered;
+
+}
+
+
+
+.container{
+    
+    border: 0px solid gold;
+}
+
+.novo{
+    
+    border: 0px solid black;
+    width: 60%;
+    height: 100;
+    display: grid;
+    justify-content: center;
+}
+
+#border table{
+    text-align: center;
+margin: 40px auto;
+font-size: 1.25em;
+border-top-left-radius: 30px;
+border-top-right-radius: 30px;
+border-bottom-right-radius: 30px;
+border-bottom-left-radius: 30px;
+
+}
+
+boderr,table,
+th,
+td {
+
+    border-collapse: collapse;
+    padding: 6px;
+    text-align: center;
+    margin-left: 30px;
+
+}
+
+
+.new{
+    margin-left: 600px;
+}
+
