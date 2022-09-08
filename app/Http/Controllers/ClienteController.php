@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Cliente;
 use Redirect;
 use App\Http\Controllers\DefaultController;
+use App\Http\Requests\ClienteStoreRequest;
+
 
 class ClienteController extends Controller
 {
@@ -17,18 +19,10 @@ class ClienteController extends Controller
         return view('admin.clientes', ['clientes' =>$clientes, 'count'=>$count ]);
     }
 
-  // public function
-
-
-    public function post(Request $request )
+    public function post( ClienteStoreRequest $request )
     {
 
-       $input = $request->validate([
-        'name' => 'required|string',
-        'phone' => 'required|integer',
-        'gender' => 'nullable|string',
-        'email' => 'nullable|string'
-    ]);
+       $input = $request->validated();
 
     Cliente::create($input);
     return Redirect::route('admin.all');

@@ -15,12 +15,10 @@ class NumeroRecargaController extends Controller
     public function novo (){
 
         $clientes = Cliente::all();
-        //dd($clientes);
         return view('admin.NovoOperadoras', ['clientes'=> $clientes]);
     }
 
   public function operadoras(){
-
       $recargas = DB::table ('numero_recargas')
             ->join('clientes', 'numero_recargas.clientes_id', '=', 'clientes.id')
             ->select('numero_recargas.id','numero_recargas.number', 'numero_recargas.type', 'clientes.name' )
@@ -38,7 +36,6 @@ class NumeroRecargaController extends Controller
             'cover' => 'nullable'
         ]);
 
-        //dd($input);
        NumeroRecarga::create($input);
        return Redirect::route('recargas.all');
 
