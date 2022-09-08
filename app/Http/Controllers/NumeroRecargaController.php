@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\NumeroRecarga;
 use App\Models\Cliente;
+use Redirect;
+use Illuminate\Support\Facades\DB;
 
 class NumeroRecargaController extends Controller
 {
@@ -14,16 +16,18 @@ class NumeroRecargaController extends Controller
 
         $clientes = Cliente::all();
         //dd($clientes);
-        return view('admin.NovoOperadoras', ['clentes'=> $clientes]);
+        return view('admin.NovoOperadoras', ['clientes'=> $clientes]);
     }
 
   public function operadoras(){
 
-    $recargas = NumeroRecarga::all();
-
+      $recargas = DB::table ('numero_recargas')
+            ->join('clientes', 'numero_recargas.clientes_id', '=', 'clientes.id')
+            ->select('numero_recargas.id','numero_recargas.number', 'numero_recargas.type', 'clientes.name' )
+            ->get();
     return view('admin.operadoras', ['recargas'=> $recargas]);
-
   }
+
 
     public function store(Request $request){
 
@@ -36,6 +40,7 @@ class NumeroRecargaController extends Controller
 
         //dd($input);
        NumeroRecarga::create($input);
+       return Redirect::route('recargas.all');
 
 
     }

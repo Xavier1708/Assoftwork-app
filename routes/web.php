@@ -28,6 +28,6 @@ Route::post('/clientes/post', [ClienteController::class, 'post'])->name('post');
 
 // ROUTAS PARA NUMEROS POR RECARGAS
 Route::get('/recargas/novo', [NumeroRecargaController::class, 'novo'])->name('recargas.novo');
-Route::get('/recargas/novo', [NumeroRecargaController::class, 'novo'])->name('recargas.all');
+Route::get('/recargas', [NumeroRecargaController::class, 'operadoras'])->name('recargas.all');
 
 Route::post('/recarga/add', [NumeroRecargaController::class, 'store'])->name('recarga.post');

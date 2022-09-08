@@ -36,7 +36,7 @@
                       </button>
                          <ul class="dropdown-menu">
                                <li><a href="{{ route('admin.all')}}" class="dropdown-item" href="#">Clientes</a></li>
-                               <li><a class="dropdown-item" href="{{ route('recargas.novo') }}">Operadores de clientes</a></li>
+                               <li><a class="dropdown-item" href="{{ route('recargas.all') }}">Operadores de clientes</a></li>
                                <li><a class="dropdown-item" href="#">Pendentes</a></li>
                                <li><hr class="dropdown-divider"></li>
                              <li><a class="dropdown-item" href="#">Config</a></li>

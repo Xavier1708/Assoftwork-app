@@ -15,31 +15,28 @@
     <h2 class="pb-2 border-bottom">Columns with icons</h2>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
 
-    <a href="{{route('novo') }}"  type="button" class="btn btn-secondary btn-sm new">Novo Cliente</a>
+    <a href="{{route('recargas.novo') }}"  type="button" class="btn btn-secondary btn-sm new">Adicionar novo</a>
 
     <table class="table table-borderless">
         <thead>
           <tr>
             <th scope="col">ID</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Numero</th>
-            <th scope="col">Genero</th>
-            <th scope="col">Email</th>
+            <th scope="col">Número</th>
+            <th scope="col">Operadora</th>
+            <th scope="col">Cliente</th>
             <th scope="col" colspan="2">Opções</th>
             <th scope="col" ></th>
 
 
           </tr>
         </thead>
-        @foreach ($clientes as $cliente)
+        @foreach ($recargas as $cliente)
         <tbody>
             <tr>
               <td>{{ $cliente->id }}</td>
-              <td>{{ $cliente->name }}</td>
-              <td>{{ $cliente->phone }}</td>
-              <td>{{ $cliente->gender }}</td>
-              <td>{{ $cliente->email }}</td>
-
+              <td>{{ $cliente->number }}</td>
+              <td>{{ $cliente->type }}</td>
+              <td>{{ $cliente->name}}</td>
               <td>
                   <button type="button" class="btn btn-link">Editar</button>
               </td>

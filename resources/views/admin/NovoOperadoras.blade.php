@@ -21,12 +21,12 @@
         <div class="col-md-3">
             <label for="type" class="form-label">Operadora</label>
             <select id="type" name="type" class="form-select border border-secondary">
-              <option selected value="MOVICEL" >UNITEL</option>
-              <option value="MOVICEL">MOVICEL</option>
-              <option value="AFRICEL">AFRICEL</option>
-              <option selected value="ZAP">ZAP</option>
-              <option value="DSTV">DSTV</option>
-              <option value="OUTRO">OUTRO</option>
+              <option  value="UNITEL" >UNITEL</option>
+              <option  value="MOVICEL">MOVICEL</option>
+              <option  value="AFRICEL">AFRICEL</option>
+              <option  value="ZAP">ZAP</option>
+              <option  value="DSTV">DSTV</option>
+              <option  value="OUTRO">OUTRO</option>
             </select>
         </div>
 
@@ -35,7 +35,7 @@
 
 
             <select id="clientes_id" name="clientes_id" class="form-select border border-secondary">
-                @foreach($clentes as $cli)
+                @foreach($clientes as $cli)
                  <option selected value="{{ $cli->id }}">{{ $cli->name }}</option>
               @endforeach
 

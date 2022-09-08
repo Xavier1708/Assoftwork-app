@@ -10,7 +10,7 @@ class NumeroRecarga extends Model
 {
     use HasFactory;
 
-    public function Cliente(){
+    public function Clientes(){
         return $this -> belongsTo(Cliente::class);
     }
 
