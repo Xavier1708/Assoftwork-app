@@ -14,15 +14,21 @@ class NumeroRecargaController extends Controller
 
     public function novo (){
 
-        $clientes = Cliente::all();
+         $clientes = Cliente::all();
+
         return view('admin.NovoOperadoras', ['clientes'=> $clientes]);
     }
 
   public function operadoras(){
-      $recargas = DB::table ('numero_recargas')
+      $recargas =
+       DB
+       ::
+       table('numero_recargas' )
             ->join('clientes', 'numero_recargas.clientes_id', '=', 'clientes.id')
             ->select('numero_recargas.id','numero_recargas.number', 'numero_recargas.type', 'clientes.name' )
+            ->where('numero_recargas.deleted','=', '1')
             ->get();
+
     return view('admin.operadoras', ['recargas'=> $recargas]);
   }
 
@@ -39,6 +45,12 @@ class NumeroRecargaController extends Controller
        NumeroRecarga::create($input);
        return Redirect::route('recargas.all');
 
+
+    }
+
+    public function deleteViews(NumeroRecarga $recarga){
+        $recarga = DB::update('update numero_recargas set deleted = 0 where id = ? ' , [$recarga->id]);
+        return Redirect::route('recargas.all');
 
     }
 }

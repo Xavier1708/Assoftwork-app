@@ -30,18 +30,18 @@
 
           </tr>
         </thead>
-        @foreach ($recargas as $cliente)
+        @foreach ($recargas as $recarga)
         <tbody>
             <tr>
-              <td>{{ $cliente->id }}</td>
-              <td>{{ $cliente->number }}</td>
-              <td>{{ $cliente->type }}</td>
-              <td>{{ $cliente->name}}</td>
+              <td>{{ $recarga->id }}</td>
+              <td>{{ $recarga->number }}</td>
+              <td>{{ $recarga->type }}</td>
+              <td>{{ $recarga->name}}</td>
               <td>
                   <button type="button" class="btn btn-link">Editar</button>
               </td>
               <td>
-                  <button type="button" class="btn btn-link">Eliminar</button>
+                  <a type="button" class="btn btn-link" href="{{route('admin.deleteViewsRecarga', $recarga->id ) }}">Eliminar</a>
               </td>
               <td>
 
