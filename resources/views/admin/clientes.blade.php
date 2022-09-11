@@ -41,10 +41,10 @@
               <td>{{ $cliente->email }}</td>
 
               <td>
-                  <button type="button" class="btn btn-link">Editar</button>
+                  <a href="{{route('admin.update', $cliente->id ) }}" type="button" class="btn btn-link">Editar</a>
               </td>
               <td>
-                  <button type="button" class="btn btn-link">Eliminar</button>
+                  <a  href="{{route('admin.deleteViews', $cliente->id ) }}" type="button" class="btn btn-link">Eliminar</a>
               </td>
               <td>
 
