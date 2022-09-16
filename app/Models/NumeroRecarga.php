@@ -17,7 +17,8 @@ class NumeroRecarga extends Model
     protected $fillable=[
         'number',
         'type',
-        'clientes_id',
-        'cover'
+        'cover',
+        'clientes_id'
+
     ];
 }

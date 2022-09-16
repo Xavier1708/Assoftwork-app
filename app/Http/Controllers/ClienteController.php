@@ -18,10 +18,7 @@ class ClienteController extends Controller
 
     public function all (){
         $count = 34;
-       // $clientes = Cliente::all();
-
         $clientes = Cliente::where('deleted','=', '1')->get();
-
         return view('admin.clientes', ['clientes' =>$clientes, 'count'=>$count ]);
     }
 

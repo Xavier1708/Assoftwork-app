@@ -6,7 +6,7 @@
 
 <div class="container px-4 py-5" id="featured-3">
     <h2 class="pb-2 border-bottom">Numeros por clientes</h2>
-    <form class="row g-3" method="POST" action="{{ route('recarga.post') }}">
+    <form class="row g-3" method="POST" action="{{ route('recarga.post') }}" enctype="multipart/form-data">
         @csrf
         <div class="form-group" >
             <label for="cover">Carregar um foto:</label>
@@ -48,7 +48,7 @@
         <div class="col-12">
           <button type="submit" class="btn btn-primary">Gurdar</button>
         </div>
-      </form>
+    </form>
   </div>
 
 

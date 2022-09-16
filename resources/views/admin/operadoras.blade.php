@@ -13,10 +13,20 @@
 
 <div class="container px-4 py-5" id="featured-3">
     <h2 class="pb-2 border-bottom">Número e clientes </h2>
+
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-
-    <a href="{{route('recargas.novo') }}"  type="button" class="btn btn-secondary btn-sm new">Adicionar novo</a>
-
+    <div class="new">
+      <form action="{{ route('recargas.all') }}" method="GET" enctype="multipart/form-data">
+        <div class="col-md-5 ">
+            <label for="search" class="form-label">Pesquisar : </label>
+            <input value="{{ request()->search}}" type="text" class="form-control border border-primary" name="search" id="search">
+            <button type="submit" class="btn btn-outline-primary me-2">Pesquisar</button>
+        </div>
+      </form>
+        <div class="buttons">
+            <a href="{{route('recargas.novo') }}"  type="button" class="btn btn-secondary btn-sm ">Adicionar novo</a>
+        </div>
+    </div>
     <table class="table table-borderless">
         <thead>
           <tr>
@@ -33,7 +43,8 @@
         @foreach ($recargas as $recarga)
         <tbody>
             <tr>
-              <td>{{ $recarga->id }}</td>
+
+              <td><img src="{{ \Illuminate\Support\Facades\Storage::url($recarga->cover)}}" alt="ALT" class="imagen"></td>
               <td>{{ $recarga->number }}</td>
               <td>{{ $recarga->type }}</td>
               <td>{{ $recarga->name}}</td>
@@ -43,15 +54,13 @@
               <td>
                   <a type="button" class="btn btn-link" href="{{route('admin.deleteViewsRecarga', $recarga->id ) }}">Eliminar</a>
               </td>
-              <td>
-
-              </td>
             </tr>
           </tbody>
         @endforeach
-</table>
+      </table>
     </div>
   </div>
+
 
 
 

@@ -15,10 +15,11 @@ class DefaultController extends Controller
 
         $clientes = Cliente::all();
         $count = count($clientes) + 1;
-
-
-      //  return $clientes;
         return view('home', ['count' => $count]);
+    }
+
+    public function admin(){
+        return view('admin.main');
     }
 
 

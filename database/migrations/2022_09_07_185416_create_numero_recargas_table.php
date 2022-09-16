@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('numero_recargas', function (Blueprint $table) {
             $table->id();
-            $table->integer('number');
+            $table->string('number');
             $table->string('type');
             $table->foreignId('clientes_id')
             ->constrained()

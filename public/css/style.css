@@ -5,15 +5,30 @@
 
 }
 
+.no-visible{
+    visibility: hidden;
+}
 
 
+.imagen{
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    clip-path: ellipse();
+    margin-right: 0.5rem;
+
+}
+
+.nav-item a{
+    color: rgb(99, 82, 82);
+}
 .container{
-    
+
     border: 0px solid gold;
 }
 
 .novo{
-    
+
     border: 0px solid black;
     width: 60%;
     height: 100;
@@ -45,6 +60,22 @@ td {
 
 
 .new{
-    margin-left: 600px;
+    width: 100%;
+   display: flex;
+   justify-content: space-around;
 }
 
+.buttons{
+  padding-top: 32px;
+
+}
+
+.col-md-5 {
+    margin-right: 520px;
+}
+
+.space{
+
+    margin-left: 350px;
+
+}
